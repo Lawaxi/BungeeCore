@@ -14,7 +14,7 @@ public class AChatCommand extends Command {
     public void execute(CommandSender sender, String[] args) {
 
         if(args.length==0) {
-            sender.sendMessage("§c没有输入任何消息.");
+            sender.sendMessage("§c没有输入任何消息");
             return;
         }
 

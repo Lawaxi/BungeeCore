@@ -17,8 +17,10 @@ public class ChatCommand extends Command {
         if(args.length>0){
             if(args[0].equalsIgnoreCase("p") || args[0].equalsIgnoreCase("party"))
             {
-                if(PartyUtils.getParty((ProxiedPlayer) sender)!=0)
-                    ChatUtils.chatModes.replace((ProxiedPlayer)sender,ChatMode.PARTY);
+                if(PartyUtils.getParty((ProxiedPlayer) sender)!=0) {
+                    ChatUtils.chatModes.replace((ProxiedPlayer) sender, ChatMode.PARTY);
+                    sender.sendMessage("§6切换至组队频道");
+                }
                 else
                     sender.sendMessage("§c你不在任何一个队伍中");
                 return;
@@ -27,6 +29,7 @@ public class ChatCommand extends Command {
 
             else if(args[0].equalsIgnoreCase("a") || args[0].equalsIgnoreCase("all")) {
                 ChatUtils.chatModes.replace((ProxiedPlayer) sender, ChatMode.PUBLIC);
+                sender.sendMessage("§6切换至公共频道");
                 return;
             }
         }
